@@ -44,3 +44,7 @@ align-items: center;
   background-image: radial-gradient(white, rgb(87, 87, 87), blue);
   
 }
+
+.number{
+  font-size: 300px;
+}
