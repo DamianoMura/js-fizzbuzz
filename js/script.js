@@ -13,7 +13,12 @@ for(  x = 1; x <= 100; x++ ){
     message="FizzBuzz";
   }
   //i prossimi due cicli riguardano i casi singoli di divisibilità
-  
+  else if(x % 3 == 0){
+    message="Fizz";
+  }
+  else if(x % 5 == 0){
+    message="Buzz";
+  }
   
 }
   
