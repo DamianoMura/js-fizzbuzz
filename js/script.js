@@ -21,6 +21,7 @@ for(  x = 1; x <= 100; x++ ){
   // stampiamo il numero così com'è
   else message=`${x}`;
 
-  
+  //esponiamo i risultati alla fine di ogni ciclo del for.
+  console.log(`${message}`);
 }
   
