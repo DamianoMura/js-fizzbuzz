@@ -95,19 +95,51 @@ footer {
 }
 
 
-@media all and (max-height:1080px) {
-p{
-  font-size: 15px;
+@media all and (max-height:1920px) {
+  p, .controls{
+  font-size: 30px;
 }
 
 .controls {
   
-  height: 90px;
-  width: 90px;
-  font-size: 45px;
+  height: 160px;
+  width: 160px;
 }
 #numbers{
-  font-size: 25px;
+  font-size: 45px;
 }
 }
 
+
+
+@media all and (max-height:1080px) {
+  p, .controls{
+    font-size: 15px;
+  }
+  
+  .controls {
+    
+    height: 90px;
+    width: 90px;
+  }
+  #numbers{
+    font-size: 25px;
+  }
+}
+
+
+@media all and (max-height:800px) {
+p,.controls{
+  font-size: 10px;
+}
+
+.controls {
+  
+  height: 30px;
+  width: 30px;
+
+}
+#numbers{
+  font-size: 45px;
+}
+}
