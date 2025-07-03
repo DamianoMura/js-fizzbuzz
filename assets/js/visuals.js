@@ -34,11 +34,11 @@ switch (x){
   
   if(document.getElementById(classStringLabels[x]).classList[0]!= "opened"){
     classString[x]="opened "+document.getElementById(classStringLabels[x]).className;
-    document.getElementById(classStringLabels[x]).className=classString[x];
+    
   }
   else{
     classString[x]=document.getElementById(classStringLabels[x]).className.replace("opened ","");
-    document.getElementById(classStringLabels[x]).className=classString[x];
+    
   }
   break;
 
@@ -48,10 +48,16 @@ switch (x){
   case 2: //cta
   break;
   case 3: //description
+  if(document.getElementById(classStringLabels[x]).classList[0]== "d-none"){
+    classString[x]=document.getElementById(classStringLabels[x]).className.replace("d-none","d-flex");
+  }
+  else {
+    classString[x]=document.getElementById(classStringLabels[x]).className.replace("d-flex","d-none");
+  }
   break;
 
 }
-
+document.getElementById(classStringLabels[x]).className=classString[x];
 }
 
 }
