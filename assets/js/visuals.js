@@ -1,37 +1,67 @@
 console.log("goditi la versione interattiva");
 
-
-// funzione per cambiare i nomi delle classi con javascript per buzz
-function buzzSwitch(){
-  let classValue;
-  if (document.getElementsByClassName("buzz").item(0).classList.item(1) == "off"){
-    classValue= document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue;
-    classValue=classValue.replace("off", "on");
-  }
-  else {
-    classValue= document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue;
-    classValue=classValue.replace("on", "off");
-  }
-document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue=classValue;
-}
-
-// funzione per cambiare i nomi delle classi con javascript per fizz
-function fizzSwitch(){
-  let classValue;
-  if (document.getElementsByClassName("fizz").item(0).classList.item(1) == "off"){
-    classValue= document.getElementsByClassName("fizz").item(0).attributes.class.nodeValue;
-    classValue=classValue.replace("off", "on");
-  }
-  else {
-    classValue= document.getElementsByClassName("fizz").item(0).attributes.class.nodeValue;
-    classValue=classValue.replace("on", "off");
-  }
-document.getElementsByClassName("fizz").item(0).attributes.class.nodeValue=classValue;
-}
-
-
-
+function spin(){
+  let number;
+  let node;
+  clearNumbers();  
+ for(  c = 1; c <= 100; c++ ){
   
+
+  node = document.createElement("span");
+  node.className="box p-3 text-danger fs-5";
+  node.appendChild(document.createTextNode(checkNumber(c)));
+  document.getElementById("numbers").appendChild(node);
+ }
+
+console.log(document.getElementById("numbers").getElementsByClassName("box").length);
+}
+
+function clearNumbers(){
+const children = document.getElementById("numbers").getElementsByClassName("box").length
+ 
+    
+    if (document.getElementById("numbers").hasChildNodes()) {
+      for (let i=0; i<children; i++){
+      
+      console.log("we have children here");
+      document.getElementById("numbers").removeChild(document.getElementById("numbers").children[0]);
+    
+      console.log(`index ` , `${i}`, `removed` );
+      }
+    }
+    else console.log("no children found... ")
+}
+
+
+
+function checkNumber(x){
+  
+    let message;
+    // prima condizione con l'operatore end 
+    // riconosce subito il caso specifico
+    // non compromettendo i casi singoli di divisibilità
+    if(x % 3 == 0 && x % 5 == 0){
+      message= "FizzBuzz";
+    }
+    // i prossimi due cicli riguardano i casi singoli di divisibilità
+    else if(x % 3 == 0){
+      message="Fizz";
+    }
+    else if(x % 5 == 0){
+      message = "Buzz";
+    }
+    // ultimo caso, non è divisibile ne per 3 nè per 5 quindi 
+    // stampiamo il numero così com'è
+    else message = `${x}`;
+
+    return message
+}
+
+
+
+
+
+
 
 
 // Create a text node:
@@ -42,3 +72,5 @@ document.getElementsByClassName("fizz").item(0).attributes.class.nodeValue=class
 
 // Append the "li" node to the list:
 //document.getElementById("myList").appendChild(node);
+
+
