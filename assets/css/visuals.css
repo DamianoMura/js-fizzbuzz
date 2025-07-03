@@ -4,7 +4,7 @@
   /*footer height */
   --foot-h: 180px;
   /*mobile version sidebar width */
-  --mob-side-w: 160px;
+  --mob-side-w: 300px;
   /*full shown sidebar with labels and playlist */
   --side-w: 200px;
   /*call to action height*/
@@ -29,11 +29,12 @@ main {
 #sidebar {
   width: var(--mob-side-w);
   height: 100%;
+  color: azure;
   background-color: var(--side-bar-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  overflow: auto;
+  justify-content: space-between; 
+  overflow-y: auto;
   font-size: 0.8rem;
 }
 #main-content {
@@ -43,20 +44,47 @@ main {
   background-color: #aab0ba;
 
 }
+
+#numbers
+{
+  margin-top: var(--cta-h);
+}
 footer {
   height: var(--foot-h);
   width: 100vw;
   background-color: var(--foot-color);
+
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  color: azure;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  width: calc(100vw - var(--mob-side-w));
+  height: var(--cta-h);
+  align-items: center;
+  z-index: 3;
+}
+.controls{
+    border-radius: 50%;
+    height:160px;
+    width:160px;
+    font-size: 100px;
+}
+.spin{
+      border: 1px solid, black;
+      background-image: -moz-radial-gradient(white, green, black);
+}
+.reset{
+  border: 1px solid, black;
+    background-image: -moz-radial-gradient(white, red, black);
 }
 
 
 
 
 
-
-
-
-
-
-<div class="container phone shadow-inset"><header><div class="text-light text-center"><h1>JS Fizz Buzz</h1></div><div class="d-flex justify-content-around"><button class="btn mb-3 spin"
-onclick="spin()"><i class="fa-solid fa-play text-white"></i></button><button class="btn mb-3 reset"><i class="fa-solid fa-power-off text-danger"></i></button></div></header><main class="container shadow-inset rounded-5 d-flex flex-wrap" class="numbers"></main><footer></footer></div>

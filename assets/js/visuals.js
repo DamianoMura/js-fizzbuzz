@@ -1,7 +1,6 @@
 console.log("goditi la versione interattiva");
 
 function spin(){
-  let number;
   let node;
   clearNumbers();  
  for(  c = 1; c <= 100; c++ ){
@@ -11,9 +10,9 @@ function spin(){
   node.className="box p-3 text-danger fs-5";
   node.appendChild(document.createTextNode(checkNumber(c)));
   document.getElementById("numbers").appendChild(node);
+  console.log("creating span number "+ c);
  }
 
-console.log(document.getElementById("numbers").getElementsByClassName("box").length);
 }
 
 function clearNumbers(){
@@ -21,9 +20,10 @@ const children = document.getElementById("numbers").getElementsByClassName("box"
  
     
     if (document.getElementById("numbers").hasChildNodes()) {
+      console.log("we have children here");
       for (let i=0; i<children; i++){
       
-      console.log("we have children here");
+      
       document.getElementById("numbers").removeChild(document.getElementById("numbers").children[0]);
     
       console.log(`index ` , `${i}`, `removed` );
