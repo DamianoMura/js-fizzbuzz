@@ -16,53 +16,52 @@ function spin(){
 }
 //ho individuato come aggiungere classi css al dom scatenate dall'evento come in questo caso per aprire la sidebar mediante il pulsante hamburger menu in alto a sinistra
 function toggleSidebar(){
-let classString = document.getElementById("sidebar").className;
+  //prendiamo il campo class dai vari #id per #sidebar #main-content #cta e  #description
+  //usiamo un'array di stringhe specifiche che identificano gli id dei tag che vogliamo editare
+const classStringLabels = [
+  "sidebar" ,
+  "main-content" ,
+  "cta" , 
+  "description"
+];
+let classString=[];
 
-if(document.getElementById("sidebar").classList[0]=="opened"){
+for(x=0 ; x<classStringLabels.length ; x++){
+classString[x]=document.getElementById(classStringLabels[x]).className;
+console.log(classString[x])
+switch (x){
+  case 0: //classStringLabels[0]="sidebar";
   
-//sidebar
-    document.getElementById("sidebar").className=document.getElementById("sidebar").className.replace("opened " , "");
-
-    console.log(" sidebar check for opened class "+ document.getElementById("sidebar").className)
-
-    document.getElementsByClassName("description").item(0).className.replace("d-flex , d-none");
-    console.log(document.getElementsByClassName("description").item(0).className);
- 
-//main-content
-    document.getElementById("main-content").className=document.getElementById("main-content").className.replace("opened " , "");
-     
-    console.log(" main-content check for opened class "+ document.getElementById("main-content").className)
-
-
-//cta
-    document.getElementById("cta").className=document.getElementById("cta").className.replace("opened d-none" , "");
-    
-    console.log(document.getElementById("cta").classList);
+  if(document.getElementById(classStringLabels[x]).classList[0]!= "opened"){
+    classString[x]="opened "+document.getElementById(classStringLabels[x]).className;
+    document.getElementById(classStringLabels[x]).className=classString[x];
   }
-
-else if(document.getElementById("sidebar").classList[0]!="opened"){
-  //sidebar 
-  document.getElementById("sidebar").className="opened " + document.getElementById("sidebar").className;  
-  console.log(document.getElementById("sidebar").classList);
-
-  document.getElementsByClassName("description").item(0).className.replace("d-none" , "d-block")
-  console.log(document.getElementsByClassName("description").item(0));
-  console.log(document.getElementsByClassName("description").item(0).className);
+  else{
+    classString[x]=document.getElementById(classStringLabels[x]).className.replace("opened ","");
+    document.getElementById(classStringLabels[x]).className=classString[x];
+  }
+  break;
 
 
-  //main-content 
-  document.getElementById("main-content").className="opened " + document.getElementById("main-content").className;  
-  console.log(document.getElementById("main-content").classList);
-  //cta 
-  document.getElementById("cta").className="opened d-none " + document.getElementById("cta").className;  
-  console.log(document.getElementById("cta").classList);
- 
+  case 1: //main-content
+  break;
+  case 2: //cta
+  break;
+  case 3: //description
+  break;
+
+}
+
+}
+
 }
 
 
 
 
-}
+
+
+
 
 function clearNumbers(){
 const children = document.getElementById("numbers").getElementsByClassName("box").length

@@ -27,7 +27,7 @@
             onclick="toggleSidebar()">
             <i class="fa-solid fa-bars"></i>
           </button>
-          <div class="description d-none">
+          <div class="d-none" id="description">
 
             <div>
               <h2>Come Funziona?</h2>
@@ -99,4 +99,28 @@
   <main class="container shadow-inset rounded-5 d-flex flex-wrap"
     class="numbers"></main>
   <footer></footer>
-</div> -->
+</div> 
+
+else if(document.getElementById("sidebar").classList[0]=="opened"){
+     
+//sidebar
+document.getElementById("sidebar").className=document.getElementById("sidebar").className.replace("opened " , "");
+
+  
+
+document.getElementsByClassName("description").item(0).className.replace("d-flex , d-none");
+console.log(document.getElementsByClassName("description").item(0).className);
+
+//main-content
+document.getElementById("main-content").className=document.getElementById("main-content").className.replace("opened " , "");
+ 
+//console.log(" main-content check for opened class "+ document.getElementById("main-content").className)
+
+
+//cta
+document.getElementById("cta").className=document.getElementById("cta").className.replace("opened d-none" , "");
+
+//console.log(document.getElementById("cta").classList);
+}
+
+-->
