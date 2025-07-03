@@ -2,11 +2,16 @@
   /*variables control panel */
 
   /*footer height */
+  --foot-h-600: 80px;
+  --foot-h: 180px;
+  --foot-h: 180px;
+  --foot-h: 180px;
   --foot-h: 180px;
   /*mobile version sidebar width */
   --mob-side-w-reduced: 300px;
-  --mob-side-w-800: 400px;
-  --mob-side-w-1080: 600px;
+  
+  --mob-side-w-800: 200px;
+  --mob-side-w-1080: 120px;
   --mob-side-w-1920: 400px;
   --mob-side-w-2400: 400px;
   
@@ -135,7 +140,33 @@ p{
 }
 
 
-@media all and (max-height:800px) {
+@media all and (min-width:800px ) and (max-height:600px) {
+  footer {
+      height: var(--foot-h-600);
+    }
+
+
+p,.controls{
+  font-size: 10px;
+}
+#sidebar {
+  width: var(--mob-side-w-800);
+}
+#main-content {
+  width: calc(100vw - var(--mob-side-w-800));
+  height: calc(100vh - var(--foot-h-600))
+}
+.controls {
+  
+  height: 30px;
+  width: 30px;
+
+}
+#numbers{
+  font-size: 45px;
+}
+}
+@media all and (max-height:800px ){
 p,.controls{
   font-size: 10px;
 }
