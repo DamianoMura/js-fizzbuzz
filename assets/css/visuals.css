@@ -45,9 +45,18 @@ main {
 
 }
 
+p{
+  font-size: 40px;
+}
+h2{
+  color: chartreuse;
+  font-size: 60px;
+}
+
 #numbers
 {
   margin-top: var(--cta-h);
+  font-size: 50px;
 }
 footer {
   height: var(--foot-h);
@@ -71,20 +80,34 @@ footer {
 }
 .controls{
     border-radius: 50%;
-    height:160px;
-    width:160px;
-    font-size: 100px;
+    height:180px;
+    width:180px;
+    font-size: 90px;
+    border: 3px solid, black;
 }
 .spin{
-      border: 1px solid, black;
+      
       background-image: -moz-radial-gradient(white, green, black);
 }
 .reset{
-  border: 1px solid, black;
+  
     background-image: -moz-radial-gradient(white, red, black);
 }
 
 
+@media all and (max-height:1080px) {
+p{
+  font-size: 15px;
+}
 
-
+.controls {
+  
+  height: 90px;
+  width: 90px;
+  font-size: 45px;
+}
+#numbers{
+  font-size: 25px;
+}
+}
 

@@ -7,7 +7,7 @@ function spin(){
   
 
   node = document.createElement("span");
-  node.className="box p-3 text-danger fs-5";
+  node.className="box p-3 text-danger";
   node.appendChild(document.createTextNode(checkNumber(c)));
   document.getElementById("numbers").appendChild(node);
   console.log("creating span number "+ c + " with content "+checkNumber(c) );
