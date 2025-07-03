@@ -4,20 +4,17 @@
   /*footer height */
   --foot-h: 180px;
   /*mobile version sidebar width */
-  --mob-side-w: 300px;
+  --mob-side-w-reduced: 300px;
+  --mob-side-w-800: 400px;
+  --mob-side-w-1080: 600px;
+  --mob-side-w-1920: 400px;
+  --mob-side-w-2400: 400px;
+  
   /*full shown sidebar with labels and playlist */
   --side-w: 200px;
   /*call to action height*/
   --cta-h: 60px;
-  /* row gap */
-  --gap: 10px;
-  /*column sizes*/
-  --col-16: calc(100% / 6);
-  --col-20: 20%;
-  --col-30: 30%;
-  --col-40: 40%;
-  --col-50: 50%;
-  --col-60: 60%;
+ 
   /*background colors*/
   --foot-color: #595050;
   --side-bar-color: rgb(10, 0, 49);
@@ -27,7 +24,7 @@ main {
   display: flex;
 }
 #sidebar {
-  width: var(--mob-side-w);
+  width: var(--mob-side-w-2400);
   height: 100%;
   color: azure;
   background-color: var(--side-bar-color);
@@ -38,7 +35,7 @@ main {
   font-size: 0.8rem;
 }
 #main-content {
-  width: calc(100vw - var(--mob-side-w));
+  width: calc(100vw - var(--mob-side-w-2400));
   height: 100%;
   overflow-y: auto;
   background-color: #aab0ba;
@@ -73,12 +70,13 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   right: 0;
-  width: calc(100vw - var(--mob-side-w));
+  width: calc(100vw - var(--mob-side-w-2400));
   height: var(--cta-h);
   align-items: center;
   z-index: 3;
 }
 .controls{
+    margin:25px;
     border-radius: 50%;
     height:180px;
     width:180px;
@@ -96,17 +94,26 @@ footer {
 
 
 @media all and (max-height:1920px) {
-  p, .controls{
-  font-size: 30px;
+
+#sidebar {
+  width: var(--mob-side-w-1920);
 }
 
-.controls {
-  
-  height: 160px;
-  width: 160px;
+.controls{
+  margin:20px;
 }
-#numbers{
-  font-size: 45px;
+
+#main-content {
+  width: calc(100vw - var(--mob-side-w-1920));
+}
+
+
+p{
+  font-size: 35px;
+}
+
+.box{
+  font-size: 40px;
 }
 }
 
@@ -114,13 +121,13 @@ footer {
 
 @media all and (max-height:1080px) {
   p, .controls{
-    font-size: 15px;
+    font-size: 25px;
   }
   
   .controls {
     
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
   }
   #numbers{
     font-size: 25px;
