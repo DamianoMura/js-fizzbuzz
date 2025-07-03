@@ -14,13 +14,53 @@ function spin(){
  }
 
 }
+//ho individuato come aggiungere classi css al dom scatenate dall'evento come in questo caso per aprire la sidebar mediante il pulsante hamburger menu in alto a sinistra
 function toggleSidebar(){
-let classString = document.getElementById("sidebar").className
-classString= "opened "+classString;
-document.getElementById("sidebar").className=classString;
-//ho individuato come aggiungere classi css al dom scatenate dall'evento come in questo caso per aprire la sidebar mediante il pulsante in alto
-console.log(document.getElementById("sidebar").className);
-console.log(document.getElementById("sidebar").classList);
+let classString = document.getElementById("sidebar").className;
+
+if(document.getElementById("sidebar").classList[0]=="opened"){
+  
+//sidebar
+    document.getElementById("sidebar").className=document.getElementById("sidebar").className.replace("opened " , "");
+
+    console.log(" sidebar check for opened class "+ document.getElementById("sidebar").className)
+
+    document.getElementsByClassName("description").item(0).className.replace("d-flex , d-none");
+    console.log(document.getElementsByClassName("description").item(0).className);
+ 
+//main-content
+    document.getElementById("main-content").className=document.getElementById("main-content").className.replace("opened " , "");
+     
+    console.log(" main-content check for opened class "+ document.getElementById("main-content").className)
+
+
+//cta
+    document.getElementById("cta").className=document.getElementById("cta").className.replace("opened d-none" , "");
+    
+    console.log(document.getElementById("cta").classList);
+  }
+
+else if(document.getElementById("sidebar").classList[0]!="opened"){
+  //sidebar 
+  document.getElementById("sidebar").className="opened " + document.getElementById("sidebar").className;  
+  console.log(document.getElementById("sidebar").classList);
+
+  document.getElementsByClassName("description").item(0).className.replace("d-none" , "d-block")
+  console.log(document.getElementsByClassName("description").item(0));
+  console.log(document.getElementsByClassName("description").item(0).className);
+
+
+  //main-content 
+  document.getElementById("main-content").className="opened " + document.getElementById("main-content").className;  
+  console.log(document.getElementById("main-content").classList);
+  //cta 
+  document.getElementById("cta").className="opened d-none " + document.getElementById("cta").className;  
+  console.log(document.getElementById("cta").classList);
+ 
+}
+
+
+
 
 }
 

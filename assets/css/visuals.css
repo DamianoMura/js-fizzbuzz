@@ -3,7 +3,7 @@
 
   /*footer height */
 
-  --foot-h: 80px;
+  --foot-h: 100px;
   --foot-h-600: 80px;
   --foot-h-800: 100px;
   --foot-h-1080: 180px;
@@ -72,7 +72,7 @@ footer {
 
 }
 
-.cta {
+#cta {
   display: flex;
   justify-content: center;
   position: fixed;
@@ -85,12 +85,17 @@ footer {
   align-items: center;
   z-index: 3;
 }
+#cta.opened {
+  
+  width: calc(100vw - var(--mob-side-w-opened));
+  
+}
 .controls{
     
     border-radius: 50%;
-    height:60px;
-    width:60px;
-    font-size: 30px;
+    height:50px;
+    width:50px;
+    font-size: 15px;
     border: 3px solid, black;
 }
 
