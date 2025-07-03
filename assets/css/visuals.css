@@ -2,13 +2,16 @@
   /*variables control panel */
 
   /*footer height */
+
+  --foot-h: 80px;
   --foot-h-600: 80px;
   --foot-h-800: 100px;
   --foot-h-1080: 180px;
   --foot-h-1920: 180px;
   --foot-h-2400: 200px;
   /*mobile version sidebar width */
-  --mob-side-w-reduced: 300px;
+  --mob-side-w-reduced: 70px;
+  --mob-side-w-opened: 390px;
   
   --mob-side-w-800: 200px;
   --mob-side-w-1080: 120px;
@@ -25,11 +28,11 @@
   --side-bar-color: rgb(10, 0, 49);
 }
 main {
-  height: calc(100vh - var(--foot-h-2400));
+  height: calc(100vh - var(--foot-h));
   display: flex;
 }
 #sidebar {
-  width: var(--mob-side-w-2400);
+  width: var(--mob-side-w-reduced);
   height: 100%;
   color: azure;
   background-color: var(--side-bar-color);
@@ -39,26 +42,28 @@ main {
   overflow-y: auto;
   font-size: 0.8rem;
 }
+#sidebar.opened {
+  width: var(--mob-side-w-opened);
+  
+}
+
+
 #main-content {
-  width: calc(100vw - var(--mob-side-w-2400));
+  width: calc(100vw - var(--mob-side-w-reduced));
   height: 100%;
   overflow-y: auto;
   background-color: #aab0ba;
 
 }
-
-p{
-  font-size: 40px;
-}
-h2{
-  color: chartreuse;
-  font-size: 60px;
+#main-content.opened {
+  width: calc(100vw - var(--mob-side-w-opened));
+ 
 }
 
 #numbers
 {
   margin-top: var(--cta-h);
-  font-size: 50px;
+  
 }
 footer {
   height: var(--foot-h);
@@ -75,19 +80,24 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   right: 0;
-  width: calc(100vw - var(--mob-side-w-2400));
+  width: calc(100vw - var(--mob-side-w-reduced));
   height: var(--cta-h);
   align-items: center;
   z-index: 3;
 }
 .controls{
-    margin:25px;
+    
     border-radius: 50%;
-    height:180px;
-    width:180px;
-    font-size: 90px;
+    height:60px;
+    width:60px;
+    font-size: 30px;
     border: 3px solid, black;
 }
+
+.sidebarToggle{
+  background-image: -moz-radial-gradient(rgb(255, 255, 255), rgb(27, 103, 234), black);
+}
+
 .spin{
       
       background-image: -moz-radial-gradient(white, green, black);
@@ -102,31 +112,4 @@ footer {
 
 
 
-
-@media all and (min-width:800px ) and (min-height:600px) {
-  footer {
-      height: var(--foot-h-600);
-    }
-
-
-p,.controls{
-  font-size: 10px;
-}
-#sidebar {
-  width: var(--mob-side-w-800);
-}
-#main-content {
-  width: calc(100vw - var(--mob-side-w-800));
-  height: calc(100vh - var(--foot-h-600))
-}
-.controls {
-  
-  height: 30px;
-  width: 30px;
-
-}
-#numbers{
-  font-size: 45px;
-}
-}
 

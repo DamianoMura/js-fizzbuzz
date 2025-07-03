@@ -14,6 +14,15 @@ function spin(){
  }
 
 }
+function toggleSidebar(){
+let classString = document.getElementById("sidebar").className
+classString= "opened "+classString;
+document.getElementById("sidebar").className=classString;
+//ho individuato come aggiungere classi css al dom scatenate dall'evento come in questo caso per aprire la sidebar mediante il pulsante in alto
+console.log(document.getElementById("sidebar").className);
+console.log(document.getElementById("sidebar").classList);
+
+}
 
 function clearNumbers(){
 const children = document.getElementById("numbers").getElementsByClassName("box").length
@@ -24,7 +33,6 @@ const children = document.getElementById("numbers").getElementsByClassName("box"
       for (let i=0; i<children; i++){
       document.getElementById("numbers").removeChild(document.getElementById("numbers").children[0]);
       console.log(`index ` , `${i}`, `removed` );
-      
       }
     }
     else{
@@ -66,14 +74,15 @@ function checkNumber(x){
 
 
 
-
-// Create a text node:
-//const textnode = document.createTextNode("Water");
-
-// Append the text node to the "li" node:
-//node.appendChild(textnode);
-
-// Append the "li" node to the list:
-//document.getElementById("myList").appendChild(node);
-
-
+function buzzSwitch(){
+  let classValue;
+  if (document.getElementsByClassName("buzz").item(0).classList.item(1) == "off"){
+    classValue= document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue;
+    classValue=classValue.replace("off", "on");
+  }
+  else {
+    classValue= document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue;
+    classValue=classValue.replace("on", "off");
+  }
+document.getElementsByClassName("buzz").item(0).attributes.class.nodeValue=classValue;
+}

@@ -13,33 +13,41 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/visuals.css">
+    <link rel="stylesheet" href="assets/css/visuals-breakpoints.css">
 
     <title>JS Fizz Buzz</title>
   </head>
   <body class="bg-light">
     <main>
-      <div class="container p-4" id="sidebar">
+      <div class="container d-flex" id="sidebar">
 
-        <div>
-          <h2>Come Funziona?</h2>
-          <p>Scrivi un programma che stampi i numeri da 1 a 100,
-            ma per i multipli di 3 stampi “Fizz” al posto del numero e per i
-            multipli di 5 stampi Buzz.
-            Per i numeri che sono sia multipli di 3 che di 5 stampi
-            FizzBuzz.</p>
-        </div>
+        <div
+          class="d-flex flex-wrap py-3">
+          <button class="controls spin mb-2 sidebarToggle"
+            onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="description d-none">
 
-        <div>
-          <h3>prova a sbirciare nella console per vedere cosa stà
-            succedendo</h3>
-        </div>
-        <div>
-          <p>
-            utilizza i pulsanti qui sotto per avviare o resettare la pagina
-          </p>
-        </div>
+            <div>
+              <h2>Come Funziona?</h2>
+              <p>Scrivi un programma che stampi i numeri da 1 a 100,
+                ma per i multipli di 3 stampi “Fizz” al posto del numero e per i
+                multipli di 5 stampi Buzz.
+                Per i numeri che sono sia multipli di 3 che di 5 stampi
+                FizzBuzz.</p>
+            </div>
 
-        <div class="d-flex flex-wrap justify-content-around w-100">
+            <div>
+              <h3>prova a sbirciare nella console per vedere cosa stà
+                succedendo</h3>
+            </div>
+            <div>
+              <p>
+                utilizza i pulsanti qui sotto per avviare o resettare la pagina
+              </p>
+            </div>
+          </div>
           <button class="controls spin mb-2" onclick="spin()">
             <i class="fa-solid fa-play"></i>
           </button>
