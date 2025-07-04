@@ -40,20 +40,20 @@ let classLists=[];
     {
       classString[x]=document.getElementById(classStringLabels[x]).className.replace("m-c-e", "m-c-e opened");
     }
-    else if (document.getElementById(classStringLabels[x]).classList[0]=="m-c-e" && document.getElementById(classStringLabels[x]).classList[1]=="opened"){
+    else if (
+      document.getElementById(classStringLabels[x]).classList[0]=="m-c-e" 
+      && 
+      document.getElementById(classStringLabels[x]).classList[1]=="opened"
+    ){
       
       classString[x]=document.getElementById(classStringLabels[x]).className.replace("m-c-e opened" , "m-c-e");
     }
-    //classLists[x]=document.getElementById(classStringLabels[x]).className+" opened";
-    
     else if (classString[x]=="d-none"){
-
-    console.log("trovo i componenti che come classe css hanno  'd-none' ....");
-    classString[x]="d-flex flex-column";
-  }
-  else if(classString[x]=="d-flex flex-column"){
-    classString[x]="d-none";
-  }
+      classString[x]="d-flex flex-column";
+    }
+    else if(classString[x]=="d-flex flex-column"){
+      classString[x]="d-none";
+    }
 
   
   document.getElementById(classStringLabels[x]).className=classString[x];
