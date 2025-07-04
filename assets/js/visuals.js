@@ -15,6 +15,9 @@ function spin(){
 
 }
 //ho individuato come aggiungere classi css al dom scatenate dall'evento come in questo caso per aprire la sidebar mediante il pulsante hamburger menu in alto a sinistra
+
+
+
 function toggleSidebar(){
   //prendiamo il campo class dai vari #id per #sidebar #main-content #cta e  #description
   //usiamo un'array di stringhe specifiche che identificano gli id dei tag che vogliamo editare
@@ -25,42 +28,46 @@ const classStringLabels = [
   "description"
 ];
 let classString=[];
-
-for(x=0 ; x<classStringLabels.length ; x++){
-classString[x]=document.getElementById(classStringLabels[x]).className;
-console.log(classString[x])
-switch (x){
-  case 0: //classStringLabels[0]="sidebar";
+let classLists=[];
+  for(let x=0 ; x<classStringLabels.length ; x++){
+  classString[x]=document.getElementById(classStringLabels[x]).className;
+  //console.log("...stampo classString["+x+"]= "+classString[x])
   
-  if(document.getElementById(classStringLabels[x]).classList[0]!= "opened"){
-    classString[x]="opened "+document.getElementById(classStringLabels[x]).className;
+  
+  //verifico che questo sia id#description, se è visibile diventa invisibile e vice versa
+
+  if(document.getElementById(classStringLabels[x]).classList[0]=="m-c-e" && document.getElementById(classStringLabels[x]).classList[1]!="opened")
+    {
+      classString[x]=document.getElementById(classStringLabels[x]).className.replace("m-c-e", "m-c-e opened");
+    }
+    else if (document.getElementById(classStringLabels[x]).classList[0]=="m-c-e" && document.getElementById(classStringLabels[x]).classList[1]=="opened"){
+      
+      classString[x]=document.getElementById(classStringLabels[x]).className.replace("m-c-e opened" , "m-c-e");
+    }
+    //classLists[x]=document.getElementById(classStringLabels[x]).className+" opened";
     
+    else if (classString[x]=="d-none"){
+
+    console.log("trovo i componenti che come classe css hanno  'd-none' ....");
+    classString[x]="d-flex flex-column";
   }
-  else{
-    classString[x]=document.getElementById(classStringLabels[x]).className.replace("opened ","");
-    
+  else if(classString[x]=="d-flex flex-column"){
+    classString[x]="d-none";
   }
-  break;
+
+  
+  document.getElementById(classStringLabels[x]).className=classString[x];
+  console.log(document.getElementById(classStringLabels[x]).className);
+} 
+ 
+} 
+  
+ 
 
 
-  case 1: //main-content
-  break;
-  case 2: //cta
-  break;
-  case 3: //description
-  if(document.getElementById(classStringLabels[x]).classList[0]== "d-none"){
-    classString[x]=document.getElementById(classStringLabels[x]).className.replace("d-none","d-flex");
-  }
-  else {
-    classString[x]=document.getElementById(classStringLabels[x]).className.replace("d-flex","d-none");
-  }
-  break;
 
-}
-document.getElementById(classStringLabels[x]).className=classString[x];
-}
 
-}
+
 
 
 

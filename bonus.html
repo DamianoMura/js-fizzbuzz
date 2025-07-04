@@ -19,7 +19,7 @@
   </head>
   <body class="bg-light">
     <main>
-      <div class="container d-flex" id="sidebar">
+      <div class="m-c-e container d-flex" id="sidebar">
 
         <div
           class="d-flex flex-wrap py-3">
@@ -27,7 +27,7 @@
             onclick="toggleSidebar()">
             <i class="fa-solid fa-bars"></i>
           </button>
-          <div class="d-none flex-column" id="description">
+          <div class="d-none" id="description">
 
             <div>
               <h2>Come Funziona?</h2>
@@ -40,7 +40,7 @@
 
             <div>
               <h3>prova a sbirciare nella console per vedere cosa stà
-                succedendo</h4>
+                succedendo</h3>
             </div>
             <div>
               <p>
@@ -56,8 +56,8 @@
           </button>
         </div>
       </div>
-      <div id="main-content" class="py-1">
-        <div id="cta" class="cta">
+      <div id="main-content" class="m-c-e">
+        <div id="cta" class="m-c-e">
           <h2>JS FIZZBUZZ</h2>
         </div>
         <div class="d-flex flex-wrap" id="numbers">
@@ -101,7 +101,7 @@
   <footer></footer>
 </div> 
 
-else if(document.getElementById("sidebar").classList[0]=="opened"){
+if(document.getElementById("sidebar").classList[0]=="opened"){
      
 //sidebar
 document.getElementById("sidebar").className=document.getElementById("sidebar").className.replace("opened " , "");
